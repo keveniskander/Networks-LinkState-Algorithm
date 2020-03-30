@@ -4,9 +4,6 @@ f = open("test1.txt", "r")
 line = f.readline()
 
 nvertices = int(line.strip())
-# line = f.readline()
-# temp = line.split(' ')
-# print(temp)
 
 
 rowcount = -1
@@ -30,21 +27,31 @@ temp_arr = [0] * colcount
 f.seek(0)
 # print('temp: ', temp_arr)
 
+# i want to use seek here but it's not working. need to fix that
+
+f = open("test1.txt", "r")
+
+f.readline()
+
+line = f.readline()
+
+
 for i in range(colcount):
     temp = line.split()
-    print(temp)
+    # print(temp)
+
     for j in range(rowcount):
-        print(temp[j], end = ' ') 
-        # print(router_arr[i][j], end = ' ')
+        # print(temp[j], end = ' ') 
+        router_arr[i][j] = temp[j]
+        print(router_arr[i][j], end = ' ')
     print()
     line = f.readline()
 
 
 
-# f = open("test1.txt", "r")
-
 # line = f.readline()
+temp = line.split()
 
-# for k in range(colcount):
-#     for l in range(rowcount):
-#         router_arr[k][j] = 1
+gateway_arr = [0]*len(temp)
+for k in range(len(temp)):
+    gateway_arr[k] = temp[k]
