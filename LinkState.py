@@ -60,4 +60,5 @@ for k in range(len(temp)):
 def lcp(n, gateway_arr, router_arr):
     print('TEST')
 
+
     
