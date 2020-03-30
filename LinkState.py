@@ -17,29 +17,25 @@ for line in f:
 
 print(rowcount)
 print(colcount)
-# f.seek(1)
 
-f = open("test1.txt", "r")
 
-f.seek(1)
-
-# line = f.readline()
-# print(line)
-# temp = line.split(' ')
-# print(temp)
 
 # print('col:', colcount)
 # print('row:',rowcount)
 
 router_arr = [[0 for i in range(colcount)]for j in range(rowcount)]
 
-temp = [rowcount]
+temp_arr = [0] * colcount
+
+f.seek(0)
+# print('temp: ', temp_arr)
 
 for i in range(colcount):
     temp = line.split()
+    print(temp)
     for j in range(rowcount):
-        # router_arr[i][j] = temp[j]
-        print(router_arr[i][j], end = ' ')
+        print(temp[j], end = ' ') 
+        # print(router_arr[i][j], end = ' ')
     print()
     line = f.readline()
 
