@@ -55,3 +55,9 @@ temp = line.split()
 gateway_arr = [0]*len(temp)
 for k in range(len(temp)):
     gateway_arr[k] = temp[k]
+
+
+def lcp(n, gateway_arr, router_arr):
+    print('TEST')
+
+    
