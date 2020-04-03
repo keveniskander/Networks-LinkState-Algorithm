@@ -69,16 +69,25 @@ def lcp(n, gateway_arr, router_arr):
 
                 print(router_arr[i][j], end = ' ')
 
-                if router_arr[i][j] > 0:
+            #     if router_arr[i][j] > 0:
                     
-                    if router_arr[i][j] < minval:
+            #         if router_arr[i][j] < minval:
                         
-                        minval = router_arr[i][j]
-            print('MIN: ', minval)        
+            #             minval = router_arr[i][j]
+            # print('MIN: ', minval)        
                     
 
 
         print()
+
+# def getMin(colcount, router_array):
+
+#     current = 1
+
+#     for i in range(colcount):
+        
+#         if router_arr[i]
+
 
 
 
