@@ -12,13 +12,10 @@ colcount = nvertices
 for line in f:
     rowcount += 1
 
-print(rowcount)
-print(colcount)
+# print(rowcount)
+# print(colcount)
 
 
-
-# print('col:', colcount)
-# print('row:',rowcount)
 
 router_arr = [[0 for i in range(colcount)]for j in range(rowcount)]
 
@@ -55,6 +52,8 @@ temp = line.split()
 gateway_arr = [0]*len(temp)
 for k in range(len(temp)):
     gateway_arr[k] = temp[k]
+
+print(gateway_arr)
 
 
 def lcp(n, gateway_arr, router_arr):
