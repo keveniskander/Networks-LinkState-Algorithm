@@ -40,8 +40,8 @@ for i in range(colcount):
     for j in range(rowcount):
         # print(temp[j], end = ' ') 
         router_arr[i][j] = temp[j]
-        print(router_arr[i][j], end = ' ')
-    print()
+        # print(router_arr[i][j], end = ' ')
+    # print()
     line = f.readline()
 
 
@@ -57,7 +57,19 @@ print(gateway_arr)
 
 
 def lcp(n, gateway_arr, router_arr):
+
+    for i in range(1, rowcount+1):
+        print(i)
+        if i not in gateway_arr:
+            for j in range(colcount):
+
+                print(router_arr[i][j], end = ' ')
+
+        print()
     print('TEST')
+
+
+lcp(colcount, gateway_arr, router_arr)
 
 
     
