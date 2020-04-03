@@ -39,7 +39,7 @@ for i in range(colcount):
 
     for j in range(rowcount):
         # print(temp[j], end = ' ') 
-        router_arr[i][j] = temp[j]
+        router_arr[i][j] = int(temp[j])
         print(router_arr[i][j], end = ' ')
     print()
     line = f.readline()
@@ -61,13 +61,20 @@ def lcp(n, gateway_arr, router_arr):
 
     for i in range(rowcount):
         # print(i)
-        if i not in gateway_arr:
+
+        minval = router_arr[i][0]
+        if i + 1 not in gateway_arr:
 
             for j in range(colcount):
 
                 print(router_arr[i][j], end = ' ')
 
-                # if router_arr[i][j] != - 1:
+                if router_arr[i][j] > 0:
+                    
+                    if router_arr[i][j] < minval:
+                        
+                        minval = router_arr[i][j]
+            print('MIN: ', minval)        
                     
 
 
