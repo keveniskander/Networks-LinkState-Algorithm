@@ -62,7 +62,7 @@ def lcp(n, gateway_arr, router_arr):
     for i in range(rowcount):
         # print(i)
 
-        minval = router_arr[i][0]
+        minval = 1
         if i + 1 not in gateway_arr:
 
             for j in range(colcount):
@@ -79,7 +79,7 @@ def lcp(n, gateway_arr, router_arr):
 
 
         print()
-    print('TEST')
+
 
 
 lcp(colcount, gateway_arr, router_arr)
