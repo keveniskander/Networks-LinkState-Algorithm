@@ -51,15 +51,15 @@ temp = line.split()
 
 gateway_arr = [0]*len(temp)
 for k in range(len(temp)):
-    gateway_arr[k] = temp[k]
+    gateway_arr[k] = int(temp[k])
 
 print(gateway_arr)
 
 
 def lcp(n, gateway_arr, router_arr):
 
-    for i in range(1, rowcount+1):
-        print(i)
+    for i in range(1, rowcount):
+        # print(i)
         if i not in gateway_arr:
             for j in range(colcount):
 
