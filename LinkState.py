@@ -117,6 +117,9 @@ def lcp(n, k, gateway_arr, router_arr):
     path_arr = list(map(int, path))
     print(path_arr)
 
+    cost = 0
+    nh = 0
+
     for a in range(len(path_arr)):
 
         print("Forwarding Table for ", path_arr[a])
@@ -124,9 +127,13 @@ def lcp(n, k, gateway_arr, router_arr):
 
         for b in range(len(gateway_arr)):
             
-            # if router_array[a][] == 
+            if router_arr[b][gateway_arr[b]] == -1:
+                # print(router_arr[a][gateway_arr[b]])
+                nh = path_arr[a-1]
+            # elif router_arr[a][gateway_arr[b]] == gateway_arr[b]:
+            #     cost = router
 
-            print("{:>10} {:>10} {:>10}".format(gateway_arr[b], "1", "2"))
+            print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost, nh))
         
         print()
 
