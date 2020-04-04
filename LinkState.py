@@ -109,6 +109,20 @@ def lcp(n, k, gateway_arr, router_arr):
             print(cost_arr[i][j], end = '')
         print() 
 
+    path_arr = list(map(int, path))
+    print(path_arr)
+
+    for a in range(len(path_arr)):
+
+        print("Forwarding Table for ", path_arr[a])
+        print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
+
+        for b in range(len(gateway_arr)):
+        
+            print("{:>10} {:>10} {:>10}".format(gateway_arr[b], "1", "2"))
+        # print("{:>10} {:>10} {:>10}".format("5", "4", "6"))
+        print()
+
 # def getMin(colcount, router_array):
 
 #     current = 1
@@ -116,6 +130,8 @@ def lcp(n, k, gateway_arr, router_arr):
 #     for i in range(colcount):
         
 #         if router_arr[i]
+
+
 
 
 
