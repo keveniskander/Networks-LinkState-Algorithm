@@ -67,17 +67,18 @@ def lcp(n, k, gateway_arr, router_arr):
 
     cost_count = 0
 
-    for i in range(n):
-        for j in range(n):
-            print(cost_arr[i][j], end = ' ')
+    # for i in range(n):
+    #     for j in range(n):
+    #         print(cost_arr[i][j], end = ' ')
 
-        print()
+    #     print()
 
     for i in range(n):
         # print(i)
 
 
-        minval = 1
+        minval_arr = [10 for i in range(n)]
+        # print('minval:', minval_arr)
         if i + 1 not in gateway_arr:
 
             for j in range(n):
@@ -88,12 +89,14 @@ def lcp(n, k, gateway_arr, router_arr):
 
                     cost_arr[i][j] = [i+1, router_arr[i][j]]
                     
-                    if router_arr[i][j] < minval:
+                    if router_arr[i][j] < minval_arr[j]:
+
+                        print('FUCK FUCK FUCK ')
                         
-                        minval = router_arr[i][j]
+                        minval_arr[j] = i
                         
                 
-            print('MIN: ', minval)
+            # print('MIN: ', minval_arr[i][0])
 
             path+=str(i+1)
 
@@ -102,6 +105,8 @@ def lcp(n, k, gateway_arr, router_arr):
 
 
         print()
+
+    print('minval: ', minval_arr)
 
     print('path: ', path)
     for i in range(n):
@@ -118,9 +123,11 @@ def lcp(n, k, gateway_arr, router_arr):
         print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
 
         for b in range(len(gateway_arr)):
-        
+            
+            # if router_array[a][] == 
+
             print("{:>10} {:>10} {:>10}".format(gateway_arr[b], "1", "2"))
-        # print("{:>10} {:>10} {:>10}".format("5", "4", "6"))
+        
         print()
 
 # def getMin(colcount, router_array):
