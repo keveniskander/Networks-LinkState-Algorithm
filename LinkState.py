@@ -121,6 +121,3 @@ def lcp(n, k, gateway_arr, router_arr):
 
 
 lcp(colcount, len(gateway_arr), gateway_arr, router_arr)
-
-
-    
