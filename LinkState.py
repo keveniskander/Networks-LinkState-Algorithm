@@ -62,14 +62,18 @@ print()
 
 def lcp(n, k, gateway_arr, router_arr):
     
-    cost_arr = [[0 for i in range(k)]for j in range(n)]
+    cost_arr = [[[0,0] for i in range(n)]for j in range(n)]
     path = ''
 
     cost_count = 0
 
-    # print(cost_arr)
+    for i in range(n):
+        for j in range(n):
+            print(cost_arr[i][j], end = ' ')
 
-    for i in range(rowcount):
+        print()
+
+    for i in range(n):
         # print(i)
 
 
