@@ -91,7 +91,6 @@ def lcp(n, k, gateway_arr, router_arr):
                     
                     if router_arr[i][j] < minval_arr[j]:
 
-                        print('FUCK FUCK FUCK ')
                         
                         minval_arr[j] = i
                         
