@@ -128,12 +128,16 @@ def lcp(n, k, gateway_arr, router_arr):
         for b in range(len(gateway_arr)):
             
             # print(router_arr[path_arr[a]][gateway_arr[b]])
-            # if router_arr[path_arr[a]-1][gateway_arr[b]] == -1:
-                # print(router_arr[path_arr[a]-1][gateway_arr[b]])
+            if router_arr[path_arr[a]-1][gateway_arr[b]-1] != -1:
+                # print(path_arr[a]-1)
+                cost = router_arr[path_arr[a]-1][gateway_arr[b]-1]
+                nh = gateway_arr[b]
+                # print(router_arr[path_arr[a]-1][gateway_arr[b]-1])
                 # nh = path_arr[-1]
 
-            # else: 
-            #     nh = 0
+            else: 
+                nh = 0
+                cost = 0
 
             print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost, nh))
         
