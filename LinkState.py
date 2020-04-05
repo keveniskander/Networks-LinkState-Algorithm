@@ -95,7 +95,7 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
         
         for k in range(len(cost_arr)):
-            if cost_arr[k][1]<min_cost and cost_arr[k][0] in unvisited:
+            if cost_arr[k][1]<min_cost and cost_arr[k][0] not in visited:
                 min_cost = cost_arr[k][1] 
                 min_vertex = cost_arr[k][0]
 
