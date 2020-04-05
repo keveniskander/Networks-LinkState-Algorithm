@@ -111,9 +111,11 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
             # print(router_arr[i][j], end = ' ')
 
-            neighbor = j+1 
+            neighbor = j+1
 
-            if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[i][1] < cost_arr[neighbor][1]:
+			
+
+            if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[i][1] < cost_arr[neighbor-1][1]:
 
             
 
