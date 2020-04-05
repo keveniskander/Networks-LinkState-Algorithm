@@ -60,52 +60,49 @@ print()
 
 
 
-def lcp(n, k, gateway_arr, router_arr):
+def lcp(n, k, start, gateway_arr, router_arr):
     
-    cost_arr = [[[0,0] for i in range(n)]for j in range(n)]
+    cost_arr = []
+    for i in range(n):
+        for j in range(1):
+            if i != start:
+                cost_arr.append([i,10000000])
+            else:
+                cost_arr.append([i, 0])
     path = ''
-    minval_arr = [10 for i in range(n)]
+    minval = 1000
     visited = []
     unvisited = [i for i in range(n)]
 
 
     # cost_count = 0
 
-    # for i in range(n):
-    #     for j in range(n):
-    #         print(cost_arr[i][j], end = ' ')
-
-    #     print()
+    print(cost_arr)
 
     count = 0
     i = 0
 
-    while count < n:
-        # print(i)
+    while len(visited) < n:
 
-
-        
-        # print('minval:', minval_arr)
-        # if i + 1 not in gateway_arr:
 
         for j in range(n):
 
-            print(router_arr[i][j], end = ' ')
+            # print(router_arr[i][j], end = ' ')
 
             if router_arr[i][j] > 0:
 
-                # cost_arr[i][j] = [i, router_arr[i][j]]
+                cost_arr[i][j] = j
                 
-                if router_arr[i][j] < minval_arr[count]:
+                # if router_arr[i][j] < minval:
 
                     
-                    minval_arr[count] = j+1
+                #     minval = j
                     
                     # print(i)
         # print()
         # print(i)
-        visited.append(minval_arr[count])
-        i = minval_arr[count]-1
+        visited.append(minval)
+        i = minval
 
         count +=1
 
@@ -115,8 +112,14 @@ def lcp(n, k, gateway_arr, router_arr):
 
         print()
 
-    print('minval: ', minval_arr)
-    print('visited: ', visited)
+    for i in range(n):
+        for j in range(1):
+            print(cost_arr[i][j], end = ' ')
+
+    print()
+
+    # print('minval: ', minval_arr)
+    # print('visited: ', visited)
 
     # print('path: ', path)
     # for i in range(n):
@@ -154,4 +157,4 @@ def lcp(n, k, gateway_arr, router_arr):
     #     print()
 
 
-lcp(colcount, len(gateway_arr), gateway_arr, router_arr)
+lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
