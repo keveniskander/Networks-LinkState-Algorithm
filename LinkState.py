@@ -66,11 +66,11 @@ def lcp(n, k, start, gateway_arr, router_arr):
     for i in range(n):
         for j in range(1):
             if i != start:
-                cost_arr.append([i,10000000])
+                cost_arr.append([i,1000])
             else:
                 cost_arr.append([i, 0])
 
-    min_cost = 1000
+    min_cost = 10000
     min_vertex = 0
     neighbor = 0
     path = ''
@@ -90,18 +90,20 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
     while len(visited) < n:
 
-        print('VISITED:', visited)
-        print('UNIVISITED:', unvisited)
-
+        min_cost = 10000
+        print('visited:', visited)
         
-        for k in range(len(cost_arr)):
+        for k in range(n):
             if cost_arr[k][1]<min_cost and cost_arr[k][0] not in visited:
+                print(min_cost)
                 min_cost = cost_arr[k][1] 
+                print(min_cost)
                 min_vertex = cost_arr[k][0]
 
         i = min_vertex
 
-        print('I', i)
+        print('I =', i+1)
+        print(cost_arr)
 
 
 
@@ -109,7 +111,7 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
             # print(router_arr[i][j], end = ' ')
 
-            neighbor = j
+            neighbor = j+1 
 
             if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[i][1] < cost_arr[neighbor][1]:
 
@@ -119,17 +121,20 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
                 # print('FUCK')
             
-                cost_arr[j][1] = router_arr[i][j]
+                cost_arr[j][1] = router_arr[i][j] + cost_arr[i][1]
 
 
 
                 
                
         visited.append(i)
-        unvisited.pop(i)
-        min_cost = 1000
+        unvisited.remove(i)
+        
+        # for i in range(len(visited)):
+        #     print(visited[i]+1, end = '')
+        # print()
 
-        count +=1
+        # count +=1
 
                  
                     
