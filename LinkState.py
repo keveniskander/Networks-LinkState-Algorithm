@@ -65,6 +65,8 @@ def lcp(n, k, gateway_arr, router_arr):
     cost_arr = [[[0,0] for i in range(n)]for j in range(n)]
     path = ''
     minval_arr = [10 for i in range(n)]
+    visited = []
+    unvisited = [i for i in range(n)]
 
 
     # cost_count = 0
@@ -75,31 +77,37 @@ def lcp(n, k, gateway_arr, router_arr):
 
     #     print()
 
-    for i in range(n):
+    count = 0
+    i = 0
+
+    while count < n:
         # print(i)
 
 
         
         # print('minval:', minval_arr)
-        if i + 1 not in gateway_arr:
+        # if i + 1 not in gateway_arr:
 
-            for j in range(n):
+        for j in range(n):
 
-                print(router_arr[i][j], end = ' ')
+            print(router_arr[i][j], end = ' ')
 
-                if router_arr[i][j] > 0:
+            if router_arr[i][j] > 0:
 
-                    cost_arr[i][j] = [i+1, router_arr[i][j]]
-                    
-                    if router_arr[i][j] < minval_arr[j]:
-
-                        
-                        minval_arr[j] = i
-                        
+                # cost_arr[i][j] = [i, router_arr[i][j]]
                 
-            # print('MIN: ', minval_arr[i][0])
+                if router_arr[i][j] < minval_arr[count]:
 
-            path+=str(i+1)
+                    
+                    minval_arr[count] = j+1
+                    
+                    # print(i)
+        # print()
+        # print(i)
+        visited.append(minval_arr[count])
+        i = minval_arr[count]-1
+
+        count +=1
 
                  
                     
@@ -108,41 +116,42 @@ def lcp(n, k, gateway_arr, router_arr):
         print()
 
     print('minval: ', minval_arr)
+    print('visited: ', visited)
 
-    print('path: ', path)
-    for i in range(n):
-        for j in range(n):
-            print(cost_arr[i][j], end = '')
-        print() 
+    # print('path: ', path)
+    # for i in range(n):
+    #     for j in range(n):
+    #         print(cost_arr[i][j], end = '')
+    #     print() 
 
     path_arr = list(map(int, path))
-    print(path_arr)
+    # print(path_arr)
 
     cost = 0
     nh = 0
 
-    for a in range(len(path_arr)):
+    # for a in range(n-k):
 
-        print("Forwarding Table for ", path_arr[a])
-        print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
+    #     print("Forwarding Table for ", path_arr[a])
+    #     print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
 
-        for b in range(len(gateway_arr)):
+    #     for b in range(len(gateway_arr)):
             
-            # print(router_arr[path_arr[a]][gateway_arr[b]])
-            # if router_arr[path_arr[a]-1][gateway_arr[b]-1] != -1:
-                # print(path_arr[a]-1)
-                # cost = router_arr[path_arr[a]-1][gateway_arr[b]-1]
-                # nh = gateway_arr[b]
-                # print(router_arr[path_arr[a]-1][gateway_arr[b]-1])
-                # nh = path_arr[-1]
+    #         print(router_arr[path_arr[a]][gateway_arr[b]])
+    #         if router_arr[path_arr[a]-1][gateway_arr[b]-1] != -1:
+    #             print(path_arr[a]-1)
+    #             cost = router_arr[path_arr[a]-1][gateway_arr[b]-1]
+    #             nh = gateway_arr[b]
+    #             print(router_arr[path_arr[a]-1][gateway_arr[b]-1])
+    #             nh = path_arr[-1]
 
-            # else: 
-            #     nh = 0
-            #     cost = 0
+    #         else: 
+    #             nh = 0
+    #             cost = 0
 
-            print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost, nh))
+    #         print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost, nh))
         
-        print()
+    #     print()
 
 
 lcp(colcount, len(gateway_arr), gateway_arr, router_arr)
