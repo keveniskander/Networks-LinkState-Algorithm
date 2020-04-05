@@ -92,18 +92,20 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 		min_cost = 10000
 		print('visited:', visited)
+		print(cost_arr)
+		print('I =', i+1)
 		
 		for k in range(n):
-			if cost_arr[k][1]<min_cost and cost_arr[k][0] not in visited:
-				print(min_cost)
+			if cost_arr[k][1]<=min_cost and cost_arr[k][0] not in visited:
+				# print(min_cost)
 				min_cost = cost_arr[k][1] 
-				print(min_cost)
+				# print(min_cost)
 				min_vertex = cost_arr[k][0]
 
 		i = min_vertex
 
-		print('I =', i+1)
-		print(cost_arr)
+		
+		# print(cost_arr)
 
 
 
@@ -132,11 +134,7 @@ def lcp(n, k, start, gateway_arr, router_arr):
 		visited.append(i)
 		unvisited.remove(i)
 		
-		# for i in range(len(visited)):
-		#     print(visited[i]+1, end = '')
-		# print()
 
-		# count +=1
 
 				 
 					
