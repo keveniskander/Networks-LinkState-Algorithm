@@ -91,18 +91,29 @@ def lcp(n, k, start, gateway_arr, router_arr):
         
         for k in range(len(cost_arr)):
             if cost_arr[k][1]<min_cost:
-                min_cost = cost_arr[k][1] 
+                min_cost = cost_arr[k][0] 
 
         i = min_cost
+
 
 
         for j in range(n):
 
             # print(router_arr[i][j], end = ' ')
 
-            if router_arr[i][j] > 0:
-                neighbor
-                cost_arr[j][1] = router_arr[i][j]
+            if j<n-1:
+
+                if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[j][1]< cost_arr[j+1][1]:
+
+                
+
+                # if the cost_eighbor + cost_current < cost_neighbor then cost_current = cost_neighbor
+
+                    print('FUCK')
+                
+                    cost_arr[j][1] = router_arr[i][j]
+
+
 
                 
                
@@ -116,6 +127,8 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 
         print()
+
+    print(cost_arr)
 
     # for i in range(n):
     #     for j in range(1):
