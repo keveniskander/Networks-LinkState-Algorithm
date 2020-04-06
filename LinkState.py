@@ -137,14 +137,18 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 
 cost_arr = lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
-print(cost_arr)
+# print(cost_arr)
 
 for a in range(colcount):
+	# print('dsjknbfg')
 	cost_arr = lcp(colcount, len(gateway_arr), a, gateway_arr, router_arr)
 	
 	if cost_arr[a][0]+1 not in gateway_arr:
 		
+		print(cost_arr)
+		
 		print("Forwarding Table for", cost_arr[a][0]+1)
 		print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
 		for b in range(len(gateway_arr)):
-			print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost_arr[b][1], cost_arr[a][2]))
+			# print(a)
+			print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost_arr[a][1], cost_arr[a][2]))
