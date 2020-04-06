@@ -40,8 +40,8 @@ for i in range(colcount):
 	for j in range(rowcount):
 		# print(temp[j], end = ' ') 
 		router_arr[i][j] = int(temp[j])
-		print(router_arr[i][j], end = ' ')
-	print()
+		# print(router_arr[i][j], end = ' ')
+	# print()
 	line = f.readline()
 
 
@@ -53,9 +53,9 @@ gateway_arr = [0]*len(temp)
 for k in range(len(temp)):
 	gateway_arr[k] = int(temp[k])
 
-print()
-print(gateway_arr)
-print()
+# print()
+# print(gateway_arr)
+# print()
 
 
 
@@ -72,7 +72,6 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 	min_cost = 10000
 	min_vertex = 0
-	neighbor = 0
 	path = ''
 	minval = 1000
 	visited = []
@@ -82,7 +81,7 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 	# cost_count = 0
 
-	print(cost_arr)
+	# print(cost_arr)
    
 
 	count = 0
@@ -91,9 +90,9 @@ def lcp(n, k, start, gateway_arr, router_arr):
 	while len(visited) < n:
 
 		min_cost = 10000
-		print('visited:', visited)
-		print(cost_arr)
-		print('I =', i+1)
+		# print('visited:', visited)
+		# print(cost_arr)
+		# print('I =', i+1)
 		
 		for k in range(n):
 			if cost_arr[k][1]<=min_cost and cost_arr[k][0] not in visited:
@@ -113,17 +112,13 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 			# print(router_arr[i][j], end = ' ')
 
-			neighbor = j
-
-			 
-
-			if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[i][1] < cost_arr[neighbor][1]:
+			if router_arr[i][j] > 0 and router_arr[i][j] + cost_arr[i][1] < cost_arr[j][1]:
 
 			
 
 			# if the cost_neighbor + cost_current < cost_neighbor then cost_current = cost_neighbor
 
-				# print('FUCK')
+				
 			
 				cost_arr[j][1] = router_arr[i][j] + cost_arr[i][1]
 
@@ -132,61 +127,12 @@ def lcp(n, k, start, gateway_arr, router_arr):
 				
 			   
 		visited.append(i)
-		unvisited.remove(i)
-		
+		unvisited.remove(i)				
 
 
-				 
-					
+		# print()
 
-
-		print()
-
-	print(cost_arr)
-
-	# for i in range(n):
-	#     for j in range(1):
-	#         print(cost_arr[i][j], end = ' ')
-
-	# print()
-
-	# print('minval: ', minval_arr)
-	# print('visited: ', visited)
-
-	# print('path: ', path)
-	# for i in range(n):
-	#     for j in range(n):
-	#         print(cost_arr[i][j], end = '')
-	#     print() 
-
-	path_arr = list(map(int, path))
-	# print(path_arr)
-
-	cost = 0
-	nh = 0
-
-	# for a in range(n-k):
-
-	#     print("Forwarding Table for ", path_arr[a])
-	#     print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
-
-	#     for b in range(len(gateway_arr)):
-			
-	#         print(router_arr[path_arr[a]][gateway_arr[b]])
-	#         if router_arr[path_arr[a]-1][gateway_arr[b]-1] != -1:
-	#             print(path_arr[a]-1)
-	#             cost = router_arr[path_arr[a]-1][gateway_arr[b]-1]
-	#             nh = gateway_arr[b]
-	#             print(router_arr[path_arr[a]-1][gateway_arr[b]-1])
-	#             nh = path_arr[-1]
-
-	#         else: 
-	#             nh = 0
-	#             cost = 0
-
-	#         print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost, nh))
-		
-	#     print()
+	print(visited)
 
 
 lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
