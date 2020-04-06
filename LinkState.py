@@ -1,4 +1,4 @@
-f = open("test2.txt", "r")
+f = open("test1.txt", "r")
 
 line = f.readline()
 
@@ -25,7 +25,7 @@ f.seek(0)
 
 # i want to use seek here but it's not working. need to fix that
 
-f = open("test2.txt", "r")
+f = open("test1.txt", "r")
 
 f.readline()
 
@@ -130,6 +130,8 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 				cost_arr[i][2] = prev_vertex+1
 			
+			
+			
 
 
 
@@ -137,9 +139,9 @@ def lcp(n, k, start, gateway_arr, router_arr):
 		visited.append(i)
 		unvisited.remove(i)
 
-		for y in range(len(cost_arr)):
-			if cost_arr[y][2] == 1000:
-				cost_arr[y][2] = prev_vertex
+		# for y in range(len(cost_arr)):
+		# 	if cost_arr[y][2] == 1000:
+		# 		cost_arr[y][2] = prev_vertex
 	for x in range(len(cost_arr)):
 		if cost_arr[x][1] == 1000:
 			cost_arr[x][1] = -1
