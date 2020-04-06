@@ -100,7 +100,7 @@ def lcp(n, k, start, gateway_arr, router_arr):
 				min_cost = cost_arr[k][1] 
 				# print(min_cost)
 				min_vertex = cost_arr[k][0]
-		prev_vertex = i
+		
 		i = min_vertex
 
 
@@ -126,15 +126,15 @@ def lcp(n, k, start, gateway_arr, router_arr):
 				# if j==n-1:
 
 				
+				prev_vertex = i
+		cost_arr[i][2] = prev_vertex+1
+				# prev_vertex = i
+				# print('prev:',prev_vertex)
+			
+			
+			# else:
 
-				cost_arr[i][2] = cost_arr[i][0]+1
-			
-			
-			# elif router_arr[i][j] < 0 and router_arr[i][j] + cost_arr[i][1] > cost_arr[j][1]:
-				
-				# print('visited', visited)
-				# print('i:', i-1)
-				# cost_arr[i][2] = visited[i-2]
+			# 	cost_arr[i][2] = prev_vertex
 
 
 					   
