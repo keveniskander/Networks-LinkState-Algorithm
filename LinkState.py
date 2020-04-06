@@ -1,4 +1,6 @@
-f = open("test1.txt", "r")
+import sys
+
+f = open(sys.argv[1], "r")
 
 line = f.readline()
 
@@ -25,7 +27,7 @@ f.seek(0)
 
 # i want to use seek here but it's not working. need to fix that
 
-f = open("test1.txt", "r")
+f = open(sys.argv[1], "r")
 
 f.readline()
 
