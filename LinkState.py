@@ -127,13 +127,15 @@ def lcp(n, k, start, gateway_arr, router_arr):
 				# if j==n-1:
 				cost_arr[i][2] = cost_arr[i][0]+1
 
-			# else:
-			# 	cost_arr[j][2] = 1000
+
 			
 				
 			   
 		visited.append(i)
-		unvisited.remove(i)				
+		unvisited.remove(i)
+
+	print(visited)
+	# cost_arr[i][2] = visited[i]				
 
 
 		# print()
