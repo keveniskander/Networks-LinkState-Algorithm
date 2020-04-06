@@ -129,12 +129,6 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 			# else:
 			# 	cost_arr[j][2] = 1000
-						
-
-			# else:
-			# 	cost_arr[j][2] = 1000
-
-
 
 				
 			   
