@@ -65,9 +65,9 @@ def lcp(n, k, start, gateway_arr, router_arr):
 	for i in range(n):
 		for j in range(1):
 			if i != start:
-				cost_arr.append([i,1000])
+				cost_arr.append([i,1000,1000])
 			else:
-				cost_arr.append([i, 0])
+				cost_arr.append([i,0,1000])
 
 	min_cost = 10000
 	min_vertex = 0
@@ -131,10 +131,17 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 		# print()
 
-	print(visited)
+	# print(visited)
 
-	return gateway_arr
+	return cost_arr
 
 
-gateway_arr = lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
-print(gateway_arr)
+cost_arr = lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
+print(cost_arr)
+
+for a in range(colcount):
+	if cost_arr[a][0]+1 not in gateway_arr:
+		print("Forwarding Table for", cost_arr[a][0]+1)
+		print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
+		for b in range(len(gateway_arr)):
+			print("{:>10} {:>10} {:>10}".format(gateway_arr[b], "2", "1"))
