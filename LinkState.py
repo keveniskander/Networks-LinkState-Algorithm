@@ -133,5 +133,8 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 	print(visited)
 
+	return gateway_arr
 
-lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
+
+gateway_arr = lcp(colcount, len(gateway_arr), 0, gateway_arr, router_arr)
+print(gateway_arr)
