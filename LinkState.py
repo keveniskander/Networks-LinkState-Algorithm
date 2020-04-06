@@ -127,10 +127,8 @@ def lcp(n, k, start, gateway_arr, router_arr):
 
 				
 				prev_vertex = i
-		cost_arr[i][2] = prev_vertex+1
-				# prev_vertex = i
-				# print('prev:',prev_vertex)
-			
+
+				cost_arr[i][2] = prev_vertex+1
 			
 			# else:
 
