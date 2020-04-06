@@ -58,6 +58,8 @@ gateway_arr = [0]*len(temp)
 for k in range(len(temp)):
 	gateway_arr[k] = int(temp[k])
 
+
+
 # print()
 # print(gateway_arr)
 # print()
@@ -78,9 +80,12 @@ def lcp(n, k, start, gateway_arr, router_arr):
 	min_cost = 1000
 	min_vertex = 0
 	prev_vertex = 0
+	new_prev = 0
+	u = 0
 	minval = 1000
 	visited = []
 	unvisited = [i for i in range(n)]
+	
 	
 
 
@@ -145,11 +150,27 @@ def lcp(n, k, start, gateway_arr, router_arr):
 		# for y in range(len(cost_arr)):
 		# 	if cost_arr[y][2] == 1000:
 		# 		cost_arr[y][2] = prev_vertex
+
+
+
+	ngateway_arr = [0,2,3,5]
+	# for l in range(1, len(unvisited)):
+	# 	if l not in gateway_arr:
+	# 		ngateway_arr.append(l-1)
+	# print(ngateway_arr)	
+
+	# while u < len(cost_arr):
+	# 	for v in range(len(ngateway_arr)):
+	# 		if cost_arr[v][2] in ngateway_arr:
+	# 			# print(cost_arr[v][2], cost_arr[ngateway_arr[v]][0])
+	# 			cost_arr[v][2] =  cost_arr[ngateway_arr[v]][0]
+	# 	u+=1
+
 	for x in range(len(cost_arr)):
 		if cost_arr[x][1] == 1000:
 			cost_arr[x][1] = -1
-		if cost_arr[x][2] == 1000:
-			cost_arr[x][2] = -1
+		# if cost_arr[x][2] == 1000:
+		# 	cost_arr[x][2] = -1
 
 
 	return cost_arr
