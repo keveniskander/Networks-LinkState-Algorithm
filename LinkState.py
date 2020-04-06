@@ -1,3 +1,7 @@
+# AUTHOR: Keven Iskander
+# ID: 160634540
+# COURSE: CP372
+
 import sys
 
 f = open(sys.argv[1], "r")
