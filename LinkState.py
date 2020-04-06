@@ -120,6 +120,10 @@ def lcp(n, k, start, gateway_arr, router_arr):
 				
 			
 				cost_arr[j][1] = router_arr[i][j] + cost_arr[i][1]
+				cost_arr[j][2] = 1000
+
+			elif router_arr[i][j] == -1:
+				cost_arr[j][2] = j+1
 
 
 
@@ -152,4 +156,4 @@ for a in range(colcount):
 		print("{:>10} {:>10} {:>10}".format("To", "Cost", "Next Hop"))
 		for b in range(len(gateway_arr)):
 			# print(gateway_arr[b])
-			print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost_arr[gateway_arr[b]-1][1], cost_arr[a][2]))
+			print("{:>10} {:>10} {:>10}".format(gateway_arr[b], cost_arr[gateway_arr[b]-1][1], cost_arr[gateway_arr[b]-1][2]))
