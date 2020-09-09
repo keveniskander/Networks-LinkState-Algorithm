@@ -1,6 +1,6 @@
-# CP372_A3
+# LinkState-Algorithm
 
-##DESCRIPTION:
+## DESCRIPTION:
 
 In this assignment I have implemented a core functionality of the Link State routing algorithm for
 an autonomous system. The input to the algorithm is a weighted directed graph with n vertices
@@ -10,7 +10,11 @@ specified in the input as well. The output should print the forwarding table for
 than the gateway routers. Each entry in a forwarding table shows the next hop node along the
 shortest path route from that node (source) to a gateway router (destination).
 
-##EXAMPLE INPUT:
+## REQUIREMENTS
+
+Latest version of python installed
+
+## EXAMPLE INPUT:
 
 6
 0 1 10 -1 -1 2
@@ -20,3 +24,14 @@ shortest path route from that node (source) to a gateway router (destination).
 -1 -1 -1 10 0 1
 -1 -1 -1 1 10 0
 2 5
+
+
+## EXAMPLE OUTPUT
+
+Forwarding Table for 1
+To Cost Next Hop
+2 1 2
+5 4 6
+
+
+
